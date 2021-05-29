@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity<Int> extends FragmentActivity implements OnMapReadyCallback {
+    boolean doubleBackToExitPressedOnce = false;
 
     int mMarkerCount = 0; //Global Variable
     Marker mMarker;
@@ -48,11 +49,12 @@ public class MapsActivity<Int> extends FragmentActivity implements OnMapReadyCal
 
              markerOptions.position(latLng);
              markerOptions.title(latLng.latitude + ":" + latLng.longitude);
-             gMap.clear();
 
-
+             gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
              gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18),5000,null);
              gMap.addMarker(markerOptions);
+
+
 
 
          });
