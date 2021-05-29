@@ -23,7 +23,7 @@ public class splashactivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally{
-                    Intent intent = new Intent(splashactivity.this, MainActivity.class);
+                    Intent intent = new Intent(splashactivity.this, MapsActivity.class);
                     startActivity(intent);
 
                 }
